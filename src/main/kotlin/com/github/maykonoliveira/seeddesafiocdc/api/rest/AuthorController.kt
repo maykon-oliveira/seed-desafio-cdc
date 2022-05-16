@@ -2,6 +2,7 @@ package com.github.maykonoliveira.seeddesafiocdc.api.rest
 
 import com.github.maykonoliveira.seeddesafiocdc.api.rest.input.AuthorCreateForm
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Author
+import com.github.maykonoliveira.seeddesafiocdc.application.exception.AuthorEmailUniqueException
 import com.github.maykonoliveira.seeddesafiocdc.application.repository.AuthorRepository
 import org.springframework.http.ResponseEntity
 import org.springframework.transaction.annotation.Transactional
@@ -23,6 +24,9 @@ class AuthorController(val repository: AuthorRepository) {
     @Transactional
     fun create(@Valid @RequestBody authorForm: AuthorCreateForm): ResponseEntity<Author> {
         val author = authorForm.toDomain();
+        if (repository.findByEmail(author.email)) {
+            throw AuthorEmailUniqueException()
+        }
         repository.save(author)
         return ResponseEntity.ok(author);
     }

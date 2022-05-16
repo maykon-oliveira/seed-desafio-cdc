@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 /**
  * CI - 1
  */
-interface AuthorRepository : JpaRepository<Author, Long>;
+interface AuthorRepository : JpaRepository<Author, Long> {
+    fun findByEmail(email: String): Boolean;
+}
