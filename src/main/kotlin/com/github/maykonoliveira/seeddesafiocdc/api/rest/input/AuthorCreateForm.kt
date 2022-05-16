@@ -8,15 +8,15 @@ import javax.validation.constraints.Size
 /**
  * CI - 1
  */
-data class AuthorCreateForm(
+data class AuthorCreateForm (
     @field:NotBlank
-    private val name: String?,
+    val name: String?,
     @field:NotBlank
     @field:Size(max = 400)
-    private val description: String?,
+    val description: String?,
     @field:Email
     @field:NotBlank
-    private val email: String?
+    val email: String?
 ) {
 
     fun toDomain(): Author {
