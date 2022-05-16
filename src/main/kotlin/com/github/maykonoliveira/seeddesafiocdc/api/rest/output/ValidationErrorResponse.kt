@@ -1,5 +1,8 @@
 package com.github.maykonoliveira.seeddesafiocdc.api.rest.output
 
+/**
+ * CI - 1
+ */
 data class ValidationErrorResponse(
     val globalErrors: MutableList<String> = mutableListOf(),
     val fieldErrors: MutableList<ValidationFieldErrorResponse> = mutableListOf()

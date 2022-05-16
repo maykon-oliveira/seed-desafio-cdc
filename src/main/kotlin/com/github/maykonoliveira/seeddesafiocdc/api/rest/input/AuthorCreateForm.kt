@@ -5,6 +5,9 @@ import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.Size
 
+/**
+ * CI - 1
+ */
 data class AuthorCreateForm(
     @field:NotBlank
     private val name: String?,
