@@ -19,8 +19,6 @@ data class AuthorCreateForm (
     val email: String?
 ) {
 
-    fun toDomain(): Author {
-        return Author(name!!, description!!, email!!);
-    }
+    fun toDomain(): Author = Author(name!!, description!!, email!!)
 
 }

@@ -15,7 +15,10 @@ import javax.validation.Valid
  */
 @RestController
 @RequestMapping("/authors")
-class AuthorController(val repository: AuthorRepository, val authorUniqueEmailValidator: AuthorUniqueEmailValidator) {
+class AuthorController(
+    private val repository: AuthorRepository,
+    private val authorUniqueEmailValidator: AuthorUniqueEmailValidator
+) {
 
     @InitBinder
     fun init(binder: WebDataBinder) {
