@@ -3,27 +3,22 @@ package com.github.maykonoliveira.seeddesafiocdc.api.rest
 import com.github.maykonoliveira.seeddesafiocdc.api.rest.input.AuthorCreateForm
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Author
 import com.github.maykonoliveira.seeddesafiocdc.application.repository.AuthorRepository
-import com.github.maykonoliveira.seeddesafiocdc.application.validator.AuthorUniqueEmailValidator
 import org.springframework.http.ResponseEntity
 import org.springframework.transaction.annotation.Transactional
-import org.springframework.web.bind.WebDataBinder
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 /**
- * CI - 4
+ * CI - 3
  */
 @RestController
 @RequestMapping("/authors")
 class AuthorController(
-    private val repository: AuthorRepository,
-    private val authorUniqueEmailValidator: AuthorUniqueEmailValidator
+    private val repository: AuthorRepository
 ) {
-
-    @InitBinder
-    fun init(binder: WebDataBinder) {
-        binder.addValidators(authorUniqueEmailValidator)
-    }
 
     @PostMapping
     @Transactional
