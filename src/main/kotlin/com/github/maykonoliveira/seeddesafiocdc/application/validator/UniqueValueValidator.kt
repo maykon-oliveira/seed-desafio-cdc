@@ -18,6 +18,8 @@ class UniqueValueValidator(private val entityManager: EntityManager) :
     }
 
     override fun isValid(value: Any?, context: ConstraintValidatorContext?): Boolean {
+        if (value == null) return false
+
         val query = entityManager.createQuery("SELECT 1 FROM ${domainClass.java.simpleName} WHERE $fieldName = :value")
         query.setParameter("value", value)
         val resultList = query.resultList
