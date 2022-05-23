@@ -14,9 +14,9 @@ class Book(
     val isbn: String,
     val publicationDate: LocalDate,
     @ManyToOne
-    private val category: Category,
+    val category: Category,
     @ManyToOne
-    private val author: Author
+    val author: Author
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

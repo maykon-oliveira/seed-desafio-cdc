@@ -1,4 +1,4 @@
-package com.github.maykonoliveira.seeddesafiocdc.api.rest.input
+package com.github.maykonoliveira.seeddesafiocdc.api.rest.book
 
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Author
@@ -8,7 +8,6 @@ import com.github.maykonoliveira.seeddesafiocdc.application.repository.AuthorRep
 import com.github.maykonoliveira.seeddesafiocdc.application.repository.CategoryRepository
 import com.github.maykonoliveira.seeddesafiocdc.application.validator.ExistsByID
 import com.github.maykonoliveira.seeddesafiocdc.application.validator.UniqueValue
-import org.hibernate.validator.constraints.Range
 import java.time.LocalDate
 import javax.validation.constraints.*
 
