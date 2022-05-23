@@ -1,4 +1,4 @@
-package com.github.maykonoliveira.seeddesafiocdc.api.rest.input
+package com.github.maykonoliveira.seeddesafiocdc.api.rest.category
 
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Category
 import com.github.maykonoliveira.seeddesafiocdc.application.validator.UniqueValue

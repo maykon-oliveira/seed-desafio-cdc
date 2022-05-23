@@ -1,6 +1,5 @@
-package com.github.maykonoliveira.seeddesafiocdc.api.rest
+package com.github.maykonoliveira.seeddesafiocdc.api.rest.author
 
-import com.github.maykonoliveira.seeddesafiocdc.api.rest.input.AuthorCreateForm
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Author
 import com.github.maykonoliveira.seeddesafiocdc.application.repository.AuthorRepository
 import org.springframework.http.ResponseEntity

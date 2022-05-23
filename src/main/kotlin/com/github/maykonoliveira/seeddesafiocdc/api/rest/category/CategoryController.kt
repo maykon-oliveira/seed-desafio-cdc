@@ -1,6 +1,5 @@
-package com.github.maykonoliveira.seeddesafiocdc.api.rest
+package com.github.maykonoliveira.seeddesafiocdc.api.rest.category
 
-import com.github.maykonoliveira.seeddesafiocdc.api.rest.input.CategoryCreateForm
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Category
 import com.github.maykonoliveira.seeddesafiocdc.application.repository.CategoryRepository
 import org.springframework.http.ResponseEntity

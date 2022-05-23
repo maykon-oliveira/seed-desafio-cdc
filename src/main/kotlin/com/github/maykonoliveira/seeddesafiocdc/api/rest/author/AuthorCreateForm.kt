@@ -1,4 +1,4 @@
-package com.github.maykonoliveira.seeddesafiocdc.api.rest.input
+package com.github.maykonoliveira.seeddesafiocdc.api.rest.author
 
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Author
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Category
