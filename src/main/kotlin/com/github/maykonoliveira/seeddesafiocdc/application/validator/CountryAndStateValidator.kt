@@ -13,7 +13,7 @@ class CountryAndStateValidator(private val stateRepository: StateRepository) :
     override fun isValid(value: CountryAndStateModel, context: ConstraintValidatorContext?): Boolean {
         val states = stateRepository.findAllByCountryId(value.countryId())
 
-        if (states.isEmpty()) {
+        if (states.isEmpty() && value.stateId() == null) {
             return true
         }
 
