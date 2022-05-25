@@ -15,7 +15,7 @@ class ExistsByIDValidator(private val entityManager: ApplicationContext) :
     }
 
     override fun isValid(value: Any?, context: ConstraintValidatorContext?): Boolean {
-        if (value == null) return false
+        if (value == null) return true
 
         return repository.existsById(value as Long);
     }

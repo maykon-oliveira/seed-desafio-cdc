@@ -13,7 +13,7 @@ import javax.validation.Valid
  */
 @RestController
 @RequestMapping("/books")
-class BookController(
+class BookCreateController(
     private val repository: BookRepository,
     private val categoryRepository: CategoryRepository,
     private val authorRepository: AuthorRepository
