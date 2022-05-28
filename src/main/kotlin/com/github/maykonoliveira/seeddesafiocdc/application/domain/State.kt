@@ -7,4 +7,7 @@ class State(val name: String, @ManyToOne val country: Country) {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null
+
+    fun isFrom(country: Country) = this.country.id == country.id
+
 }
