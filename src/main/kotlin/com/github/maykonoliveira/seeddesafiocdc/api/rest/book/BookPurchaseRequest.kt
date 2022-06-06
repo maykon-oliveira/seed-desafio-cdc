@@ -5,6 +5,7 @@ import com.github.maykonoliveira.seeddesafiocdc.application.repository.BookRepos
 import com.github.maykonoliveira.seeddesafiocdc.application.repository.CountryRepository
 import com.github.maykonoliveira.seeddesafiocdc.application.repository.StateRepository
 import javax.validation.Valid
+import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
 
 /**
@@ -12,7 +13,8 @@ import javax.validation.constraints.NotNull
  */
 data class BookPurchaseRequest(
     @field:NotNull @field:Valid val buyer: BookPurchaseBuyer?,
-    @field:NotNull @field:Valid val shoppingCart: BookShoppingCart?
+    @field:NotNull @field:Valid val shoppingCart: BookShoppingCart?,
+    val couponCode: String?
 ) {
     fun toDomain(
         bookRepository: BookRepository,

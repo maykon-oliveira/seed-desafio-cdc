@@ -17,6 +17,10 @@ data class BookOrder(
     @GeneratedValue(strategy = GenerationType.AUTO)
     private val id: Long? = null
 
-    fun total(): BigDecimal = orderItems.sumOf { it.total() }
+    fun total(): BigDecimal {
+        val total = orderItems.sumOf { it.total() }
+        val discount = total.multiply(purchase.coupon?.percentage() ?: BigDecimal.ZERO)
+        return total.minus(discount)
+    }
 
 }

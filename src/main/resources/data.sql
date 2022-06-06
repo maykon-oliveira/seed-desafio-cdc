@@ -10,3 +10,6 @@ insert into country values (1, 'BR')
 insert into country values (2, 'EUA')
 
 insert into state values (1, 'RN', 1)
+
+insert into coupon values (1, 'TOP10', 10, '2022-06-08')
+insert into coupon values (2, 'TOP20', 20, '2022-07-08')

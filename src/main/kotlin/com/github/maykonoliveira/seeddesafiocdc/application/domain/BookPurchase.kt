@@ -40,4 +40,18 @@ class BookPurchase(
             }
             field = value
         }
+
+    @OneToOne
+    var coupon: Coupon? = null
+        set(value) {
+            if (this.coupon != null) return
+            field = value
+        }
+
+    fun applyCoupon(coupon: Coupon) {
+        if (!coupon.isValid()) {
+            throw Error("Coupom inválido")
+        }
+        this.coupon = coupon
+    }
 }

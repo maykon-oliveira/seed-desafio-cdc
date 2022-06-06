@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat
 import com.github.maykonoliveira.seeddesafiocdc.application.domain.Coupon
 import com.github.maykonoliveira.seeddesafiocdc.application.validator.UniqueValue
 import org.hibernate.validator.constraints.Range
+import java.math.BigDecimal
 import java.time.LocalDate
 import javax.validation.constraints.Future
 import javax.validation.constraints.NotBlank
@@ -17,7 +18,7 @@ data class CouponCreateForm(
     @field:NotBlank @field:UniqueValue(fieldName = "code", domainClass = Coupon::class) val code: String?,
     @field:Positive
     @field:Range(max = 100)
-    val pct: Int?,
+    val pct: BigDecimal?,
     @field:Future
     @field:NotNull
     @field:JsonFormat(pattern = "dd/MM/yyyy")
