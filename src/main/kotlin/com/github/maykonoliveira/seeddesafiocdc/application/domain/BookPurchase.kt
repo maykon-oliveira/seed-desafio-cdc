@@ -43,15 +43,10 @@ class BookPurchase(
 
     @OneToOne
     var coupon: Coupon? = null
-        set(value) {
-            if (this.coupon != null) return
-            field = value
-        }
 
     fun applyCoupon(coupon: Coupon) {
-        if (!coupon.isValid()) {
-            throw Error("Coupom inválido")
-        }
+        Assert.isTrue(coupon.isValid(), "Coupom inválido")
+        Assert.isNull(this.coupon, "Compra já tem um cupom aplicado")
         this.coupon = coupon
     }
 }

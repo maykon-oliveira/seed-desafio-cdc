@@ -13,7 +13,7 @@ class CouponValidator(
     private val repository: CouponRepository,
     private val bookPurchaseRepository: BookPurchaseRepository
 ) {
-    fun validate(code: String): Coupon {
+    fun validateAndReturns(code: String): Coupon {
         val coupon = repository.findByCode(code).orElseThrow { NoSuchElementException() }
 
         if (!coupon.isValid()) {

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 /**
- * CI - 7
+ * CI - 6
  */
 @RestController
 @RequestMapping("/books/buy")
@@ -31,12 +31,7 @@ class BookPurchaseController(
     @PostMapping
     @Transactional
     fun buyBook(@Valid @RequestBody bookPurchaseRequest: BookPurchaseRequest): ResponseEntity<*> {
-        val bookPurchase = bookPurchaseRequest.toDomain(bookRepository, countryRepository, stateRepository)
-
-        bookPurchaseRequest.couponCode?.let {
-            val coupon = couponValidator.validate(it)
-            bookPurchase.applyCoupon(coupon)
-        }
+        val bookPurchase = bookPurchaseRequest.toDomain(bookRepository, countryRepository, stateRepository, couponValidator)
 
         bookPurchaseRepository.save(bookPurchase)
         return ResponseEntity.ok(bookPurchase)

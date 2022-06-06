@@ -21,6 +21,6 @@ data class Coupon(
     fun percentage(): BigDecimal = this.pct.divide(BigDecimal(100))
 
     @JsonIgnore
-    fun isValid(): Boolean = validate.isAfter(LocalDate.now())
+    fun isValid(): Boolean = validate >= LocalDate.now()
 
 }
